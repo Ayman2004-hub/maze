@@ -1,5 +1,5 @@
 #Greenfoot project file
-class.Enemy.image=apple1.png
+class.Enemy.image=bomb.png
 class.Fish.image=fish3.png
 class.FishWorld.image=bluerock.jpg
 class.Food.image=hamburger.png
@@ -43,10 +43,10 @@ dependency8.type=UsesDependency
 dependency9.from=Person
 dependency9.to=Wall
 dependency9.type=UsesDependency
-editor.fx.0.height=990
-editor.fx.0.width=1542
-editor.fx.0.x=-3
-editor.fx.0.y=-3
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=552
+editor.fx.0.y=100
 height=990
 package.numDependencies=12
 package.numTargets=9
