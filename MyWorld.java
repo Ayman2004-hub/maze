@@ -9,28 +9,36 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public static int score = 0;
+    private int elapsedTime = 0;
+    private boolean gameOver = false;
 
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
-    public MyWorld()
-    {    
-        // Create a new world with 600x600 cells with a cell size of 1x1 pixels.
+public MyWorld() {    
         super(800, 800, 1);
-        this.score=0;
+        this.score = 0;
         prepare();
     }
     
-    public void act(){
-        showText("Score = "+ score , 50, 25);
-        
-        if(score >= 3){
-            addObject(new Home(),575,25);
+public void act() {
+    if (!gameOver) {
+        showText("Score = " + score, 50, 25);
+        showText("Time: " + (elapsedTime / 60), 750, 25); // Display elapsed time in seconds
+        elapsedTime++;
+
+        if (elapsedTime >= 60 * 60) { // 60 seconds * 60 = 3600 (1 hour)
+            gameOver = true;
+            showText("Game Over", getWidth() / 2, getHeight() / 2);
+            Greenfoot.stop();
+        } else {
+            if (score >= 3) {
+                addObject(new Home(), 575, 25);
+            }
         }
-        
-   
     }
+}
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -46,9 +54,9 @@ public class MyWorld extends World
                 {Greenfoot.getRandomNumber(2)+2, 0, 0, 1, 0, 1, 1, 1, 1, Greenfoot.getRandomNumber(2)+2, 0, 0},
                 {1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1},
                 {Greenfoot.getRandomNumber(2)+2, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, },
-                {1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1},
-                {0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1},
-                {0, 1, 0, 1, 0, 0, 1, 0, 1, 2, 1, 1},
+                {1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0},
+                {0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0},
+                {0, 1, 0, 1, 0, 0, 1, 0, 1, 2, 0, 0},
                 {0, 1, 1, 1, 0, 1, 1, 0, Greenfoot.getRandomNumber(2)+2, 0, 1, 1 , 1 ,1 ,1 ,0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, Greenfoot.getRandomNumber(2)+2},
                 {Greenfoot.getRandomNumber(2)+2, 1, 0, 1, 0, 1, 1, 0, 0, 1, Greenfoot.getRandomNumber(2)+2, 0},
