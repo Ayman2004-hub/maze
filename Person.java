@@ -37,13 +37,12 @@ public class Person extends Actor
         }
     }
     public void hitEnemy(){
-       Actor apple = getOneIntersectingObject(Enemy.class);
-       if(apple != null){
-           getWorld().removeObject(apple);
-           getWorld().removeObject(Person);
-           MyWorld.score--;
+        Actor apple = getOneIntersectingObject(Enemy.class);
+        if(apple != null){
+        getWorld().removeObject(apple);
+        getWorld().removeObject(this); 
+        MyWorld.score--;
         }
-       
     }
     public void hitFood(){
        Actor food = getOneIntersectingObject(Food.class);
@@ -56,7 +55,7 @@ public class Person extends Actor
     public boolean hitEdge(){
         int getX = getX();
         int getY = getY();
-        if(getX <= 10|| getX >=590|| getY <= 15|| getY >= 585  ){
+        if(getX <= 10|| getX >=790|| getY <= 15|| getY >= 785  ){
             return true;
         }
         else{

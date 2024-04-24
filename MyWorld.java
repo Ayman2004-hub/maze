@@ -17,7 +17,7 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x600 cells with a cell size of 1x1 pixels.
-        super(600, 600, 1);
+        super(800, 800, 1);
         this.score=0;
         prepare();
     }
@@ -42,19 +42,21 @@ public class MyWorld extends World
         int x = 25;        
         int[][] maze = 
             {
-                {1, 1, 1, 1, 0, 2, 1, 0, 0, 0, 1, 0},
-                {Greenfoot.getRandomNumber(2)+2, 0, 0, 1, 0, 1, 1, 0, 1, Greenfoot.getRandomNumber(2)+2, 1, 0},
-                {1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0},
-                {Greenfoot.getRandomNumber(2)+2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+                {1, 1, 1, 1, 0, 2, 1, 0, 0, 0, 1, 0, 1, 0, 1 },
+                {Greenfoot.getRandomNumber(2)+2, 0, 0, 1, 0, 1, 1, 1, 1, Greenfoot.getRandomNumber(2)+2, 0, 0},
+                {1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1},
+                {Greenfoot.getRandomNumber(2)+2, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, },
                 {1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1},
-                {0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0},
-                {0, 1, 0, 1, 0, 0, 1, 0, 1, 2, 1, 0},
-                {0, 1, 1, 1, 0, 1, 1, 0, Greenfoot.getRandomNumber(2)+2, 0, 1, 1},
+                {0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1},
+                {0, 1, 0, 1, 0, 0, 1, 0, 1, 2, 1, 1},
+                {0, 1, 1, 1, 0, 1, 1, 0, Greenfoot.getRandomNumber(2)+2, 0, 1, 1 , 1 ,1 ,1 ,0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, Greenfoot.getRandomNumber(2)+2},
                 {Greenfoot.getRandomNumber(2)+2, 1, 0, 1, 0, 1, 1, 0, 0, 1, Greenfoot.getRandomNumber(2)+2, 0},
-                {1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0},
+                {1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1 ,1 ,1 ,1},
                 {0, 0, 0, Greenfoot.getRandomNumber(2)+2, 0, Greenfoot.getRandomNumber(2)+2, 1, 0, 0, 0, 0, 0},
-
+                {1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 ,0},
+                {0, 0, 0, Greenfoot.getRandomNumber(2)+2, 0, Greenfoot.getRandomNumber(2)+2, 1, 0, 0, 0, 0, 0},
+                {1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1,1 ,1 , 1, 1},
             };
         for(int i=0; i<maze.length; i++) {
             x = 25;
